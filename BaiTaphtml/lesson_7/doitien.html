@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển Đổi Tiền Tệ</title>
+    <style>
+        select{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <span>Amount</span>
+        <input type="number" id="money" placeholder="Nhập số tiền"> <br>
+        <span>From Currency</span>
+        <select id="select1">
+            <option value="0">VietNam</option>
+            <option value="1">USA</option>
+        </select>
+        <span>To Curency</span>
+        <select id="select2">
+            <option value="1">USA</option>
+            <option value="0">VietNam</option>
+        </select>
+    </form> <br>
+    <button onclick="Result()">Convert</button>
+    <div id="result" style="font-size: 30px;"></div>
+</body>
+</html>
+
+<script>
+    function Result(){
+        let money = document.getElementById("money").value;
+        let select1 = document.getElementById("select1").value;
+        let select2 = document.getElementById("select2").value;
+        if (select1 == "0" && select2 == "1"){
+            let result = money/22000;
+            document.getElementById("result").innerHTML = result;
+        }
+        if (select1 == "1" && select2 == "0"){
+            let result = money*22000;
+            document.getElementById("result").innerHTML = result;
+        }
+        if (select1 == select2){
+            document.getElementById("result").innerHTML = "Hãy chọn mệnh giá";
+        }
+    }
+  
+</script>
